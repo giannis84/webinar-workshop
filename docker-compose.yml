@@ -1,0 +1,16 @@
+version: '3'
+services:
+
+    subscriber:
+        build:
+            context: ./subscriber/
+            dockerfile: docker/dockerfile
+        ports:
+        - 5001:5000
+    
+    publisher:
+        build:
+            context: ./publisher/
+            dockerfile: docker/dockerfile
+        ports:
+        - 5002:5000

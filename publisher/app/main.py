@@ -1,14 +1,14 @@
 from google.cloud import pubsub_v1
 import pandas as pd, json, os
 
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"]="credentials.json"
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"]=""
 
-def start(c):
+def start():
 
-    array_of_recs=_load_csv("raw_data.csv")
-    message_attributes={"participant_name": f"argy{c}"}
+    array_of_recs=_load_csv()
+    message_attributes={"participant_name": ""}
     publisher = pubsub_v1.PublisherClient()
-    topic_path = publisher.topic_path("projectagora-codecamp-workshop", "webinar-workshop-input") 
+    topic_path = publisher.topic_path(project="", topic="") 
     resp=_publish_message(publisher, topic_path, array_of_recs,message_attributes)
     print(f"message successfully published with message_id:{resp}")
 
@@ -25,5 +25,5 @@ def _publish_message(publisher, topic_path, data, attributes: dict):
     return message_id
 
 
-for i in range(1,30):
-   start(i)
+
+start()

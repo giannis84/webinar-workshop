@@ -3,7 +3,7 @@ import os, json, pandas as pd, time
 from tabulate import tabulate
 
 
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"]="credentials.json"
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"]=""
 
 def start():
 
@@ -15,8 +15,8 @@ def _attache_subscription_to_topic():
     
     publisher = pubsub_v1.PublisherClient()
     subscriber = pubsub_v1.SubscriberClient()
-    topic_path = publisher.topic_path("projectagora-codecamp-workshop", "webinar-workshop-output")
-    subscription_path = subscriber.subscription_path("projectagora-codecamp-workshop", "argy_subscription")
+    topic_path = publisher.topic_path(project="", topic="")
+    subscription_path = subscriber.subscription_path(project="", subscription="")
     
     try:
         # Wrap the subscriber in a 'with' block to automatically call close() to

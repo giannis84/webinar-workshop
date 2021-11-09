@@ -29,17 +29,22 @@ More specific you need to find the line:
     4. where the subscription path is being composed and set the project id as "projectagora-codecamp-workshop"
     5. where the subscription path is being composed and set the subscription as "{your_name}_subscription"
 
+## Clone The Repository To Your PC ##
+   
+   1. open a terminal
+   2. cd to a desired path 
+   3. git clone git@github.com:thinkdigitalgroupprojectagora/webinar-workshop.git
 
 ## Start The Services ##
 
    # Subscriber #
    1. open a terminal
-   2. cd to /your path/to/subscriber
+   2. cd to /your path/to/webinar-workshop/subscriber
    3. docker build -t subscriber -f docker/dockerfile .
    4. docker run subscriber
 
    # Publisher #
    1. open a terminal
-   2. cd to /your path/to/publisher
+   2. cd to /your path/to/webinar-workshop/publisher
    3. docker build -t publisher -f docker/dockerfile .
    4. docker run publisher

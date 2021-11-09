@@ -1,0 +1,11 @@
+FROM python:3.9.1-slim
+
+
+WORKDIR /subscriber/app
+
+COPY ./app/ /subscriber/app/
+RUN pip3 install -r requirements.txt
+RUN apt-get update 
+
+
+CMD [ "python3", "main.py" ]

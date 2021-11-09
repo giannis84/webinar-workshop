@@ -48,3 +48,5 @@ More specific you need to find the line:
    2. cd to /your path/to/webinar-workshop/publisher
    3. docker build -t publisher -f docker/dockerfile .
    4. docker run publisher
+
+   Keep in mind that after each change in the code you need to repeat the step (3) and (4) 
